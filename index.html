@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="kk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Интерактивті география платформасы</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>Интерактивті география платформасы</h1>
+      <p class="subtitle">Оқу, тексеру, сәйкестендіру және номенклатура</p>
+    </header>
+
+    <main class="container">
+      <section id="welcome" class="card active">
+        <h2>Бастапқы бет</h2>
+        <p>Жұмысты бастау үшін мәліметтеріңізді енгізіңіз.</p>
+        <form id="student-form" class="form-grid">
+          <label>
+            Оқушының аты
+            <input type="text" id="student-name" placeholder="Атыңыз" required />
+          </label>
+          <label>
+            Сыныбы
+            <input type="text" id="student-class" placeholder="Мысалы: 8А" required />
+          </label>
+          <button type="submit" class="btn primary">Бастау</button>
+        </form>
+      </section>
+
+      <section id="platform" class="hidden">
+        <div class="student-badge" id="student-badge"></div>
+
+        <nav class="tabs">
+          <button class="tab active" data-target="conspect">1) Конспект</button>
+          <button class="tab" data-target="quiz">2) Тест</button>
+          <button class="tab" data-target="matching">3) Сәйкестендіру</button>
+          <button class="tab" data-target="nomenclature">4) Номенклатура</button>
+        </nav>
+
+        <section id="conspect" class="card tab-panel active">
+          <h2>Конспект</h2>
+          <article class="note-block">
+            <h3>1. Географиялық қабық</h3>
+            <p>
+              Географиялық қабық — атмосфера, гидросфера, литосфера және биосфераның өзара
+              әрекеттесу аймағы. Бұл жүйе табиғи кешендердің қалыптасуына әсер етеді.
+            </p>
+          </article>
+          <article class="note-block">
+            <h3>2. Материктер мен мұхиттар</h3>
+            <p>
+              Жер шарында 6 материк пен 4 негізгі мұхит бар. Олардың әрқайсысы климаты, жер бедері,
+              табиғат зоналары арқылы ерекшеленеді.
+            </p>
+          </article>
+          <article class="note-block">
+            <h3>3. Климат қалыптастырушы факторлар</h3>
+            <p>
+              Күн радиациясы, географиялық ендік, мұхит ағындары, жер бедері және ауа массалары
+              аймақтық климатқа тікелей ықпал етеді.
+            </p>
+          </article>
+        </section>
+
+        <section id="quiz" class="card tab-panel hidden">
+          <h2>Тест (10 сұрақ)</h2>
+          <form id="quiz-form" class="quiz-list"></form>
+          <div class="actions">
+            <button type="button" id="check-quiz" class="btn primary">Тексеру</button>
+            <button type="button" id="reset-quiz" class="btn">Қайта бастау</button>
+          </div>
+          <p id="quiz-result" class="result"></p>
+        </section>
+
+        <section id="matching" class="card tab-panel hidden">
+          <h2>Сәйкестендіру (6 жұп)</h2>
+          <p>Сол жақтағы нысанға оң жақтан дұрыс сипаттаманы таңдаңыз.</p>
+          <form id="matching-form" class="matching-grid"></form>
+          <div class="actions">
+            <button type="button" id="check-matching" class="btn primary">Тексеру</button>
+          </div>
+          <p id="matching-result" class="result"></p>
+        </section>
+
+        <section id="nomenclature" class="card tab-panel hidden">
+          <h2>Номенклатура</h2>
+          <p>Берілген нысандарды дұрыс аймақпен сәйкестендіріңіз.</p>
+          <div class="map-grid" id="map-grid"></div>
+          <div class="actions">
+            <button type="button" id="check-nomenclature" class="btn primary">Тексеру</button>
+          </div>
+          <p id="nomenclature-result" class="result"></p>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
